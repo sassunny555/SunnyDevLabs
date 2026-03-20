@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   images: {
+    localPatterns: [
+      {
+        pathname: "/images/**",
+      },
+    ],
     remotePatterns: [
       {
         protocol: "https",

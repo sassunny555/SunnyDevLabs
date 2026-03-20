@@ -1,3 +1,5 @@
+import { statSync } from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import LogoMarquee from "@/components/logo-marquee";
 import ServiceStackSection from "@/components/service-stack-section";
@@ -91,12 +93,27 @@ const clientLogos = [
   `${placeholderBase}/logos/logo-15.png`,
 ];
 
-const process = [
+const processSteps = [
   "Understand the goals, audience, and product requirements",
   "Plan the structure, user flow, and design direction",
   "Design and develop the product with attention to detail",
   "Test, refine, and prepare everything for launch",
 ];
+
+function getHeroPortraitVersion() {
+  try {
+    const heroPath = path.join(
+      process.cwd(),
+      "public/images/hero/hero-portrait.svg.png",
+    );
+
+    return String(statSync(heroPath).mtimeMs);
+  } catch {
+    return "1";
+  }
+}
+
+const heroPortraitVersion = getHeroPortraitVersion();
 
 export default function Home() {
   return (
@@ -134,7 +151,7 @@ export default function Home() {
             <div className="absolute inset-x-[14%] top-[18%] bottom-[16%] rounded-[46%] bg-[radial-gradient(circle_at_50%_38%,rgba(255,255,255,0.9)_0%,rgba(232,242,255,0.7)_34%,rgba(188,221,255,0.18)_70%,rgba(188,221,255,0)_100%)] blur-xl" />
             <div className="absolute inset-x-[18%] bottom-4 h-10 rounded-full bg-[#7cb7ff]/15 blur-2xl md:bottom-8 md:h-16" />
             <Image
-              src="/images/hero/hero-portrait.svg.png"
+              src={`/images/hero/hero-portrait.svg.png?v=${heroPortraitVersion}`}
               alt="Sunny hero portrait"
               width={1400}
               height={1600}
@@ -259,7 +276,7 @@ export default function Home() {
             className="mt-6 h-48 w-full rounded-2xl border border-[var(--color-line)] object-cover md:h-56"
           />
           <ol className="mt-6 space-y-3">
-            {process.map((step, index) => (
+            {processSteps.map((step, index) => (
               <li key={step} className="flex items-center gap-3 rounded-xl border-b border-[var(--color-line)]/60 px-2 py-3 text-[var(--color-muted)]">
                 <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[var(--color-accent-soft)] text-sm font-semibold text-[var(--color-accent)]">
                   {index + 1}
