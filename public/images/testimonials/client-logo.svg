@@ -1,0 +1,5 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="120" rx="12" fill="#121D37"/>
+  <circle cx="64" cy="60" r="24" fill="#5DD6FF" fill-opacity="0.45"/>
+  <text x="108" y="70" fill="#D7E3FF" font-size="28" font-family="Inter, Arial, sans-serif">Client Logo</text>
+</svg>

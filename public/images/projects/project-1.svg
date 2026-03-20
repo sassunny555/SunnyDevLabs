@@ -1,0 +1,9 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#0D1428"/>
+  <rect x="120" y="100" width="1360" height="800" rx="30" fill="#141F3A" stroke="#2B3A60" stroke-width="4"/>
+  <rect x="180" y="180" width="560" height="380" rx="20" fill="#1D2D53"/>
+  <rect x="790" y="180" width="620" height="58" rx="12" fill="#253A69"/>
+  <rect x="790" y="270" width="620" height="58" rx="12" fill="#253A69"/>
+  <rect x="790" y="360" width="420" height="58" rx="12" fill="#253A69"/>
+  <text x="800" y="820" text-anchor="middle" fill="#D7E3FF" font-size="52" font-family="Inter, Arial, sans-serif">Project 1 • 1600 x 1000</text>
+</svg>
